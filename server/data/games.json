@@ -1,0 +1,18 @@
+{
+    "16847545-95f1-43yu-5fr1-67reed43hr62":  {
+    "title" : "Need for Speed: Most Wanted",
+    "category" : "Racer",
+    "maxLevel" : "2",
+    "imageUrl" : "img-cdn.heureka.group/v1/96dd5e0e-9ec9-42ef-8203-9a4d4dc4cace.jpg",
+    "summary" : "Most Wanted focuses on street racing-oriented gameplay involving a selection of events and racing circuits found within the fictional city of Rockport. The game's main story involving players taking on the role of a street racer who must compete against 15 of the city's most elite street racers to become the 'most wanted' racer of the group. In the process, they will seek revenge against one of the groups who took their car, and develop a feud with the city's police department. The game brought in many notable improvements and additions over other entries in the series, its major highlight being more in-depth police pursuits. Certain editions of the game were packaged with the ability for online multiplayer gaming.",
+    "_id" : "16847545-95f1-43yu-5fr1-67reed43hr62"
+    },
+    "16843545-95f1-43yu-5fr1-67reed43he62": {
+        "title": "Blur",
+        "category": "Racer",
+        "maxLevel": "25",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c8/Blur_%28video_game%29.jpg",
+        "summary": "Blur features a racing style that incorporates real world cars and locales with arcade style handling and vehicular combat. The game is a spiritual successor to the Project Gotham Racing series.[2] Blur was the penultimate game developed by Bizarre Creations before they were shut down by Activision on February 18, 2011.",
+        "_id" : "16843545-95f1-43yu-5fr1-67reed43he62"        
+    }
+}
