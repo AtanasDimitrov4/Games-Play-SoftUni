@@ -1,15 +1,28 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import gameService from "../../api/gameService";
 
 export default function DetailsGame() {
+    const navigate = useNavigate();
     const [game, setGame] = useState([]);
     const { gameId } = useParams();
 
     useEffect(() => {
             gameService.getOne(gameId)
-             .then(setGame)
+            .then(setGame)
         }, [gameId]);
+    
+    const gameDeleteHandler = async () => {
+        const hasConfirm = confirm(`But ${game.title} is my favorite game. Are you sure about that?`);
+
+        if(!hasConfirm) {
+            return;
+        }
+
+        await gameService.delete(gameId);
+
+        navigate('/games');
+    };
         
     return(
         <section id="game-details">
@@ -25,11 +38,11 @@ export default function DetailsGame() {
 
                 <p className="text">{game.summary}</p>
 
-                {/*<!-- Bonus ( for Guests and Users ) -->*/}
+                
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {/*<!-- list all comments for current game (If any) -->*/}
+                        
                         <li className="comment">
                             <p>Content: I rate this one quite highly.</p>
                         </li>
@@ -37,19 +50,21 @@ export default function DetailsGame() {
                             <p>Content: The best game.</p>
                         </li>
                     </ul>
-                    {/*<!-- Display paragraph: If there are no games in the database -->*/}
+                    
                     <p className="no-comment">No comments.</p>
                 </div>
 
-                {/*<!-- Edit/Delete buttons ( Only for creator of this game )  -->*/}
+                
                 <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
+                    <Link href="#" className="button">Edit</Link>
+                    <button onClick={gameDeleteHandler} 
+                    className="button"
+                    >Delete
+                    </button>
                 </div>
             </div>
 
-            {/*<!-- Bonus -->*/}
-            {/*<!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->*/}
+            
             <article className="create-comment">
                 <label>Add new comment:</label>
                 <form className="form">
