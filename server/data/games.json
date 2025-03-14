@@ -22,5 +22,13 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
         "summary": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City",
         "_id" : "16843245-95f1-43yu-5fr1-67reek43he62"        
+    },
+        "16883245-95f1-42yu-5fr1-67reek43he62":{
+        "title": "GreedFall",
+        "category": "Action RPG",
+        "maxLevel": "46",
+        "imageUrl": "https://www.giantbomb.com/a/uploads/scale_medium/8/87790/3118153-box_gf.png",
+        "summary": "GreedFall is a fantasy action RPG by the French development studio Spiders, which invites the player to a remote mysterious and magically infested island Teer Fradee, protected by all kinds of supernatural beings. The player is on a mission to find a cure for the Malichor plague. GreedFall is published by Focus Home Interactive. In May 18, 2022 was announced a sequel, GreedFall 2: The Dying World, published by Nacon.",
+        "_id" : "16883245-95f1-42yu-5fr1-67reek43he62"
     }
 }
