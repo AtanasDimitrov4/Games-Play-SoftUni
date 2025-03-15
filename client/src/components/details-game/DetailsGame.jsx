@@ -56,7 +56,7 @@ export default function DetailsGame() {
 
                 
                 <div className="buttons">
-                    <Link href="#" className="button">Edit</Link>
+                    <Link to={`games/${gameId}/edit`} className="button">Edit</Link>
                     <button onClick={gameDeleteHandler} 
                     className="button"
                     >Delete
