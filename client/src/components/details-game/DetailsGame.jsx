@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import gameService from "../../api/gameService";
+import DisplayComments from "../comment-displey/DisplayComments";
+import AddComments from "../add-comments/AddComments";
 
 export default function DetailsGame() {
     const navigate = useNavigate();
@@ -39,20 +41,7 @@ export default function DetailsGame() {
                 <p className="text">{game.summary}</p>
 
                 
-                <div className="details-comments">
-                    <h2>Comments:</h2>
-                    <ul>
-                        
-                        <li className="comment">
-                            <p>Content: I rate this one quite highly.</p>
-                        </li>
-                        <li className="comment">
-                            <p>Content: The best game.</p>
-                        </li>
-                    </ul>
-                    
-                    <p className="no-comment">No comments.</p>
-                </div>
+              <DisplayComments />
 
                 
                 <div className="buttons">
@@ -65,13 +54,7 @@ export default function DetailsGame() {
             </div>
 
             
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form">
-                    <textarea name="comment" placeholder="Comment......"></textarea>
-                    <input className="btn submit" type="submit" value="Add Comment" />
-                </form>
-            </article>
+            <AddComments />
 
         </section>
     );
