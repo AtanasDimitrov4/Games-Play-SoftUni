@@ -12,27 +12,35 @@ export default function EditGame() {
        .then(setGame)
     },[gameId]);
 
+    const formAction = async (formData) => {
+        const gameData = Object.fromEntries(formData);
+
+        await gameService.edit(gameId, gameData);
+
+        navigate(`/games/${gameId}/details`);
+    }
+
     return(
         <section id="edit-page" className="auth">
-        <form id="edit">
+        <form id="edit" action={formAction}>
             <div className="container">
 
                 <h1>Edit Game</h1>
-                <label htlmFor="leg-title">Legendary title:</label>
+                <label htmlFor="leg-title">Legendary title:</label>
                 <input type="text" id="title" name="title" defaultValue={game.title} />
 
-                <label htlmFor="category">Category:</label>
+                <label htmlFor="category">Category:</label>
                 <input type="text" id="category" name="category" defaultValue={game.category} />
 
-                <label htlmFor="levels">MaxLevel:</label>
+                <label htmlFor="levels">MaxLevel:</label>
                 <input type="number" id="maxLevel" name="maxLevel" min="1" defaultValue={game.maxLevel} />
 
-                <label htlmFor="game-img">Image:</label>
+                <label htmlFor="game-img">Image:</label>
                 <input type="text" id="imageUrl" name="imageUrl" defaultValue={game.imageUrl} />
 
-                <label htlmFor="summary">Summary:</label>
+                <label htmlFor="summary">Summary:</label>
                 <textarea name="summary" id="summary" defaultValue={game.summary}></textarea>
-                <input className="btn submit" type="submit" value="Edit Game" />
+                <input className="btn submit" type="submit" defaultValuevalue="Edit Game" />
 
             </div>
         </form>
