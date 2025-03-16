@@ -1,15 +1,19 @@
-export default function DisplayComments() {
+export default function DisplayComments({
+    comments,
+}) {
     return(  
     <div className="details-comments">
         <h2>Comments:</h2>
         <ul>
-            
-            <li className="comment">
-                <p>Content: I rate this one quite highly.</p>
-            </li>
-            <li className="comment">
-                <p>Content: The best game.</p>
-            </li>
+            {comments.length > 0
+              ? comments.map(({ _id, email, comment }) => (
+                <li key={_id} className="comment">
+                    <p>{email}: {comment}</p>
+                </li>
+            ))
+            : <p className ="no-comment">No comments</p>
+
+            }
         </ul>
         
         <p className="no-comment">No comments.</p>
