@@ -1,11 +1,15 @@
+import commentsService from "../../api/commentsService";
+
 export default function AddComments({
    email,
+   gameId,
 }) {
-    const commentAction = (formData) => {
+    const commentAction = async (formData) => {
         const comment = formData.get('comment');
         
-        console.log(email)
-        console.log(comment)
+       const createdComment = await commentsService.create(email, gameId, comment);
+
+       console.log(createdComment);
     }
 
     return (
